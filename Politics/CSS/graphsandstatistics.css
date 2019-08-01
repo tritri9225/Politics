@@ -1,7 +1,4 @@
-h1{
-  color: #0033EE;
-  font-size: 80px;
-}
+
 .container {
   position: relative;
   width: 50%;
@@ -22,18 +19,19 @@ h1{
   width: 100%;
   opacity: 0;
   transition: .3s ease;
-  background-color: #008CBA;
+  background-color: #F1F1F1F1;
 }
 
 .container:hover .overlay {
-  opacity: 1;
+  opacity: 0.9;
 }
 
 .text {
   color: black;
+  font-family:'Montserrat';
+  font-weight: 100;
   font-size: 20px;
   position: absolute;
   top: 50%;
-  left: 50%;
   text-align: center;
 }
