@@ -1,31 +1,56 @@
-funtion countdown(){
-// Set the date we're counting down to
-var countDownDate = new Date("Nov 3, 2020 ").getTime();
+function register(State){
+  var dict= {
+    "Alabama":"General Election Deadline: October 19, 2020",
+    "Alaska":"General Election Deadline: October 4, 2020",
+    "Arizona":"General Election Deadline: October 5, 2020",
+    "Arkansas":"General Election Deadline: October 4, 2020",
+    "California":"General Election Deadline: October 19, 2020",
+    "Colorado":"General Election Deadline: October 26, 2020",
+    "Conneticut":"General Election Deadline: October 27, 2020",
+    "Delaware":"General Election Deadline: October 10, 2020",
+    "Florida":"General Election Deadline: October 5, 2020",
+    "Georgia":"General Election Deadline: October 5, 2020",
+    "Hawaii":"General Election Deadline: October 5, 2020",
+    "Idaho":"General Election Deadline: October 9, 2020",
+    "Illinios":"General Election Deadline: October 6, 2020 by mail; October 18, 2020 online",
+    "Indiana":"General Election Deadline: October 5, 2020",
+    "Iowa":"General Election Deadline: October 24, 2020",
+    "Kansas":"General Election Deadline: October 13, 2020",
+    "Kentucky":"General Election Deadline: October 5, 2020",
+    "Luisiana":"General Election Deadline: October 4 by mail; October 14 online",
+    "Maine":"General Election Deadline: October 13, 2020",
+    "Maryland":"General Election Deadline: October 13 by mail or online; October 29,",
+    "Massachusetts":"General Election Deadline: October 14, 2020",
+    "Michigan":"General Election Deadline: October 14, 2020",
+    "Minnesota":"General Election Deadline: October 13, 2020",
+    "Mississippi":"General Election Deadline: October 4, 2020",
+    "Montana":"General Election Deadline: October 4, 2020",
+    "Misouri":"General Election Deadline: October 7, 2020",
+    "Nebraska":"eneral Election Deadline: October 3, 2020 by mail; October 13, 2020 in-person; October 15, 2020 online",
+    "New Hamshire":"General Election Deadline: October 21, 2020",
+    "New Jersey":"General Election Deadline: October 13, 2020",
+    "New Mexico":"General Election Deadline: October 6, 2020",
+    "New York":"General Election Deadline: October 9, 2020",
+    "North Carolina":"General Election Deadline: October 9, 2020",
+    "North Dakota":"North Dakota does not have a voter registration process, just bring valid id and reisdency",
+    "Ohio":"General Election Deadline: October 4, 2020",
+    "Oklahoma":"General Election Deadline: October 9, 2020",
+    "Oregon":"General Election Deadline: October 13, 2020",
+    "Pennsylvania":"General Election Deadline: October 4, 2020",
+    "Rhode Island":"General Election Deadline: October 4, 2020",
+    "South Carolina":"General Election Deadline: October 4, 2020",
+    "South Dakota":"General Election Deadline: October 19, 2020",
+    "Tennessee":"General Election Deadline: October 4, 2020",
+    "Texas":"General Election Deadline: October 4, 2020",
+    "Utah":"General Election Deadline: October 4, 2020 by mail; October 27, 2020 in-person or online",
+    "Vermont":"General Election Deadline: October 30, 2020",
+    "Virginia":"General Election Deadline: October 12, 2020",
+    "Washington":"General Election Deadline: October 5, 2020 by mail or online; October 26, 2020 in-person",
+    "West Virginia":"General Election Deadline: October 13, 2020",
+    "Wisconsin":"General Election Deadline: October 14, 2020",
+    "Wyoming":"General Election Deadline: October 20, 2020",
 
-// Update the count down every 1 second
-var x = setInterval(function() {
 
-  // Get today's date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-
-  // If the count down is over, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
   }
-}, 1000);
-
+  alert(dict[State]);
 }
