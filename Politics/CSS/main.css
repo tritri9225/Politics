@@ -1,0 +1,16 @@
+
+body {
+  background-color: Azure;
+}
+
+h1 {
+  color: Black;
+  font-family: 'Overpass Mono';
+  font-size: 50px
+}
+
+h2 {
+  color: Black;
+  font-family: 'Fjalla One';
+  font-size: 30px
+}
