@@ -30,5 +30,7 @@ plt.bar(y_pos, height, color=['red', 'blue'])
 plt.title('2016 Election Results')
 plt.xlabel('Candidates')
 plt.ylabel('Number of Votes')
+plt.text(-.19, 13302541, '13,302,541')
+plt.text(0.82, 11959102, '11,959,102')
 
 plt.show()
