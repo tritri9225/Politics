@@ -33,4 +33,18 @@ plt.ylabel('Number of Votes')
 plt.text(-.19, 13302541, '13,302,541')
 plt.text(0.82, 11959102, '11,959,102')
 
-plt.show()
+#fig = go.Figure()
+#plt.show()
+scl = (0, "rgb(0, 0, 255)"), (1, "rgb(255, 0, 0)")
+#for i in range(len(list_of_results)):
+
+loc_list = []
+
+for i in range(len(list_of_results)):
+    loc_list.append(list_of_results[i]["Locations"]["State "])
+
+#fig = go.Figure(data=go.Choropleth(locationmode = 'USA-states', locations=list_of_results[1]["Location"]["State"], z = list_of_results[1]["Vote Data"]["Donald Trump"]["Number of Votes"], colorscale = scl, colorbar_title = "Right to Left"))
+fig = go.Figure(data=go.Choropleth(locationmode='USA-states', locations=tuple(list_of_results[]["Location"]["State Abbreviation"]), z))
+fig.update_layout(title_text = '2016 Primary Results - Sanders vs. Trump', geo_scope = 'usa')
+
+fig.show()
