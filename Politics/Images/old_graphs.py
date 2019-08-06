@@ -4,6 +4,28 @@ import matplotlib.pyplot as plt
 from matplotlib.pyplot import FuncFormatter
 import numpy as np
 import plotly.graph_objs as go
+import plotly.figure_factory as ff
+
+county_dict = {}
+file = open('fips.txt', 'r')
+for line in file:
+    toks = line.split(' ')
+    if (len(toks) < 4):
+        continue
+    fip = toks[4]
+    county_name = ''
+    hasCounty = False
+    for i in range(12, len(toks)):
+        if (toks[i] == 'County\n'):
+            hasCounty = True
+            continue
+        county_name += toks[i] + ' '
+    if hasCounty:
+        county_name = county_name[:-1]
+    else:
+        county_name = county_name[:-2]
+    county_dict[county_name] = fip
+#print(county_dict)
 
 t_total = 0
 s_total = 0
@@ -41,10 +63,19 @@ scl = (0, "rgb(0, 0, 255)"), (1, "rgb(255, 0, 0)")
 
 loc_list = []
 votes = 0
-county_dict = {}
+data_list = []
+county_list = []
+code_list = []
 
 for i in range(len(list_of_results)):
-    county_dict[list_of_results[i]["Location"]["County"]] = list_of_results[i]["Vote Data"]["Donald Trump"]["Percent of Votes"]
+    county = list_of_results[i]["Location"]["County"]
+
+    if county in county_dict:
+        county_list.append(list_of_results[i]["Location"]["County"])
+        data_list.append(list_of_results[i]["Vote Data"]["Donald Trump"]["Percent of Votes"])
+        code = county_dict[county]
+        code_list.append(code)
+
     #print(list_of_results[i]["Location"]["State Abbreviation"])
     #print(list_of_results[i]["Vote Data"]["Donald Trump"])
     '''if list_of_results[i]["Location"]["State Abbreviation"] == 'AL':
@@ -147,15 +178,16 @@ for i in range(len(list_of_results)):
         state_dict['WI'] = list_of_results[i]["Vote Data"]["Donald Trump"]["Percent of Votes"]
     if list_of_results[i]["Location"]["State Abbreviation"] == 'WY':
         state_dict['WY'] = list_of_results[i]["Vote Data"]["Donald Trump"]["Percent of Votes"]'''
-print(county_dict)
+#print(county_list)
+#print(data_list)
+#print(code_list)
 
 
-for i in range(len(list_of_results)):
-    loc_list.append(list_of_results[i]["Location"]["State"])
+
 #make a dictionary with states as keys and percentage of votes for values.
-for state in loc_list:
-    votes = state[i]['Vote Data']['Donald Trump']['Percentage of Votes']
-fig = go.Figure(data=go.Choropleth(locationmode='USA-states', locations=loc_list, z = votes, colorscale = scl, colorbar_title = "Right to Left"))
-fig.update_layout(title_text = '2016 Primary Results - Sanders vs. Trump', geo_scope = 'usa')
+fig = ff.create_choropleth(fips=code_list, values=data_list)
+fig.layout.template = None
 
-#fig.show()
+#fig = go.Figure(data=go.Choropleth(locationmode='USA-states', locations=code_list, z = data_list, colorscale = scl, colorbar_title = "Right to Left"))
+#fig.update_layout(title_text = '2016 Primary Results - Sanders vs. Trump', geo_scope = 'usa')
+fig.show()
