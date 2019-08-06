@@ -58,4 +58,5 @@ https://en.wikipedia.org/wiki/Elizabeth_Warren
 Marriane Williamson info:
 https://en.wikipedia.org/wiki/Marianne_Williamson
 
-Andrew Yang
+Andrew Yang info and picture:
+https://en.wikipedia.org/wiki/Andrew_Yang
