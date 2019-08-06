@@ -45,3 +45,17 @@ https://en.wikipedia.org/wiki/Beto_O'Rourke
 
 Bernie Sanders info and picture:
 https://en.wikipedia.org/wiki/Bernie_Sanders
+
+Joe Sestak info and picture:
+https://en.wikipedia.org/wiki/Joe_Sestak
+
+Tom Steyer info and picture:
+https://en.wikipedia.org/wiki/Tom_Steyer
+
+Elizabeth Warren info and picture:
+https://en.wikipedia.org/wiki/Elizabeth_Warren
+
+Marriane Williamson info:
+https://en.wikipedia.org/wiki/Marianne_Williamson
+
+Andrew Yang
